@@ -84,6 +84,8 @@
         body {
             font-size: 1.6rem;
             font-family: var(--font-primary);
+            background: var(--color-gray-1);
+            color: var(--color-dark-text);
         }
 
         h1,
@@ -119,6 +121,162 @@
 
         .mainLogoIcon {
             margin-right: 2rem;
+        }
+
+        .searchForm {
+            border: .2rem solid var(--color-primary-dark);
+            max-width: 64rem;
+            margin: 0 auto;
+            border-radius: .5rem;
+            position: relative;
+            transition: all 150ms ease-in-out;
+        }
+
+        .searchForm:focus-within {
+            border-color: var(--color-primary);
+            background: var(--color-white);
+        }
+
+        .searchInput,
+        .searchButton {
+            border: none;
+            background: none;
+            outline: none;
+            padding: 0.9rem;
+            transition: all 150ms ease-in-out;
+        }
+
+        .searchInput {
+            width: 100%;
+            padding-right: 3.5rem;
+        }
+
+        .searchButton {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .searchButton:focus {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .searchForm:focus-within .searchButton {
+            color: var(--color-primary);
+            outline: .1rem solid var(--color-primary);
+        }
+
+        .mainContent {
+            padding-top: 0;
+        }
+
+        .mainContentList {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--spacing-gutter-large);
+        }
+
+        .recipe {
+            background: var(--color-white);
+            box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, .2);
+            transform: scale(1);
+            transition: all 150ms ease-in-out;
+            border-radius: .5rem;
+            overflow: hidden;
+        }
+
+        .recipe img {
+            max-width: 100%;
+        }
+
+        .recipeListItem {
+            max-width: 64rem;
+        }
+
+        .recipeListItem:hover {
+            transform: scale(1.02);
+            box-shadow: -0.8rem 0.8rem 1.8rem rgba(0, 0, 0, .2);
+        }
+
+        .recipeTitleContainer {
+            padding: var(--spacing-gutter-medium);
+            padding-bottom: 2rem;
+        }
+
+        .recipeAuthor {
+            padding: 0 var(--spacing-gutter-medium);
+        }
+
+        .recipeAuthor a {
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            transition: all 150ms ease-in-out;
+        }
+
+        .recipeAuthor a:hover {
+            color: var(--color-primary);
+        }
+
+        .recipeAuthorItem {
+            color: var(--color-gray-4);
+            margin-right: 1rem;
+        }
+
+        .recipeContent {
+            padding: var(--spacing-gutter-medium);
+            padding-top: 2rem;
+        }
+
+        .recipeMetaContainer {
+            display: flex;
+            flex-flow: row wrap;
+            background: var(--color-gray-1);
+            padding: var(--spacing-gutter-medium);
+        }
+
+        .recipeMeta {
+            display: flex;
+            flex-flow: column nowrap;
+            flex-shrink: 1;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .recipeMetaTitle {
+            font-size: 1.6rem;
+        }
+
+        .recipeFooter a {
+            background: var(--color-primary-dark);
+            display: block;
+            color: var(--color-white);
+            text-decoration: none;
+            text-align: center;
+            padding: 1.5rem var(--spacing-gutter-medium);
+            transition: all 150ms ease-in-out;
+        }
+
+        .recipeFooter a:hover {
+            filter: brightness(1.5);
+        }
+
+        .mainFooter {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+            padding: var(--spacing-gutter-large);
+        }
+
+        .mainFooter a {
+            text-decoration: none;
+            color: var(--color-white);
+            transition: all 150ms ease-in-out;
+        }
+
+        .mainFooter a:hover {
+            filter: brightness(.8);
         }
     </style>
 </head>
