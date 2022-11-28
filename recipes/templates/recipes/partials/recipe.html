@@ -1,9 +1,9 @@
 <div class="recipe recipeListItem">
     <div class="recipeCover">
-        <img src="https://via.placeholder.com/1280x720.png/269fe6" alt="Temporário">
+        <img src="{{ recipe.cover.url }}" alt="Temporário">
 
         <div class="recipeTitleContainer">
-            <h2 class="recipeTitle">{{ recipe.title }}{</h2>
+            <h2 class="recipeTitle">{{ recipe.title }}</h2>
         </div>
 
         <div class="recipeAuthor">
@@ -42,12 +42,20 @@
             </div>
         </div>
 
-        <footer class="recipeFooter">
-            <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
-                <i class="fas fa-eye"></i>
-                <span>ver mais...</span>
-            </a>
-        </footer>
+        {% if isDetailPage is not True %}
+            <footer class="recipeFooter">
+                <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
+                    <i class="fas fa-eye"></i>
+                    <span>ver mais...</span>
+                </a>
+            </footer>
+        {% endif %}
+
+        {% if isDetailPage is True %}
+            <div class="preparationSteps">
+                {{recipe.preparation_steps|linebreaksbr}}
+            </div>
+        {% endif %}
 
     </div>
 </div>
