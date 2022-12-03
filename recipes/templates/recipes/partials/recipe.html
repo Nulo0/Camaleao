@@ -1,9 +1,13 @@
 <div class="recipe recipeListItem">
     <div class="recipeCover">
+        <a href="{% url 'recipes:recipe' recipe.id %}">
         <img src="{{ recipe.cover.url }}" alt="Temporário">
+        </a>
 
         <div class="recipeTitleContainer">
-            <h2 class="recipeTitle">{{ recipe.title }}</h2>
+            <a href="{% url 'recipes:recipe' recipe.id %}">
+                <h2 class="recipeTitle">{{ recipe.title }}</h2>
+            </a>
         </div>
 
         <div class="recipeAuthor">
@@ -44,7 +48,7 @@
 
         {% if isDetailPage is not True %}
             <footer class="recipeFooter">
-                <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
+                <a class="recipe-read-more button button-dark button-full-width" href="{% url 'recipes:recipe' recipe.id %}">
                     <i class="fas fa-eye"></i>
                     <span>ver mais...</span>
                 </a>
